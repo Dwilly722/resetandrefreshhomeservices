@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reset and Refresh Home Services provides standard, deep, and move-in/move-out cleaning services.">
+  <title>Reset & Refresh Home Services</title>
+  <style>
+    :root{
+      --navy:#17324d;
+      --blue:#2f6f8f;
+      --light:#f4f8fa;
+      --white:#ffffff;
+      --text:#263746;
+      --muted:#667784;
+      --accent:#8db8c9;
+      --shadow:0 14px 40px rgba(23,50,77,.12);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--white);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,255,255,.96);
+      border-bottom:1px solid #e7eef2;
+      backdrop-filter:blur(10px);
+    }
+    .nav{
+      min-height:74px;display:flex;align-items:center;justify-content:space-between;
+      gap:25px;
+    }
+    .brand{font-weight:900;letter-spacing:.5px;color:var(--navy);font-size:1.08rem}
+    .brand span{display:block;color:var(--blue);font-size:.7rem;letter-spacing:2px}
+    nav{display:flex;gap:26px;align-items:center}
+    nav a{font-weight:700;font-size:.93rem;color:var(--navy)}
+    .nav-cta,.hero-btn{
+      background:var(--navy);color:white;padding:12px 19px;border-radius:8px;
+      font-weight:800;display:inline-block;
+    }
+    .hero{
+      background:linear-gradient(135deg,#edf6f8 0%,#fff 58%,#e6f1f5 100%);
+      padding:92px 0 82px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+    .eyebrow{
+      color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:2px;
+      font-size:.82rem;margin-bottom:14px;
+    }
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:.98;color:var(--navy);letter-spacing:-2px;margin-bottom:22px}
+    .hero p{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .secondary-btn{
+      padding:12px 19px;border:2px solid var(--navy);border-radius:8px;
+      font-weight:800;color:var(--navy);background:white;
+    }
+    .hero-card{
+      background:white;border-radius:22px;padding:38px;box-shadow:var(--shadow);
+      border:1px solid #e1ebef;
+    }
+    .hero-card h2{color:var(--navy);font-size:1.6rem;margin-bottom:10px}
+    .hero-card p{font-size:1rem;margin-bottom:22px}
+    .check{display:flex;gap:10px;margin:12px 0;font-weight:700;color:var(--navy)}
+    .check::before{content:"✓";color:var(--blue);font-weight:900}
+    section{padding:82px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 45px}
+    .section-head h2{font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin-bottom:10px}
+    .section-head p{color:var(--muted)}
+    .services{background:var(--light)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .card{
+      background:white;border:1px solid #e1ebef;border-radius:16px;padding:31px;
+      box-shadow:0 8px 25px rgba(23,50,77,.06);display:flex;flex-direction:column;
+    }
+    .icon{
+      width:48px;height:48px;border-radius:12px;background:#e8f3f6;color:var(--blue);
+      display:grid;place-items:center;font-size:1.35rem;margin-bottom:20px;
+    }
+    .card h3{color:var(--navy);font-size:1.35rem;margin-bottom:11px}
+    .card p{color:var(--muted);margin-bottom:18px}
+    .card ul{list-style:none;color:var(--text)}
+    .card li{margin:8px 0;padding-left:19px;position:relative}
+    .card li::before{content:"•";position:absolute;left:0;color:var(--blue);font-weight:900}
+    .why-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+    .why-box{
+      background:var(--navy);color:white;border-radius:22px;padding:42px;
+    }
+    .why-box h2{font-size:2.2rem;line-height:1.1;margin-bottom:15px}
+    .why-box p{color:#d7e5eb}
+    .points{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .point h3{color:var(--navy);margin-bottom:6px}
+    .point p{color:var(--muted)}
+    .cta{
+      background:linear-gradient(135deg,var(--navy),#285a73);
+      color:white;text-align:center;
+    }
+    .cta h2{font-size:clamp(2rem,4vw,3.2rem);margin-bottom:12px}
+    .cta p{color:#dce9ee;max-width:650px;margin:0 auto 26px}
+    .cta .hero-btn{background:white;color:var(--navy)}
+    footer{background:#102638;color:#cbdbe2;padding:28px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{font-weight:900;color:white}
+    .small{font-size:.88rem;color:#a9bdc7}
+    @media(max-width:850px){
+      nav{display:none}
+      .hero-grid,.why-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .hero{padding:65px 0}
+      section{padding:65px 0}
+    }
+    @media(max-width:600px){
+      .hero-card{padding:28px}
+      .points{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column;text-align:center}
+      h1{letter-spacing:-1px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">RESET & REFRESH<span>HOME SERVICES</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Home Cleaning Services</div>
+          <h1>A cleaner home.<br>A fresher start.</h1>
+          <p>
+            Reset your space and refresh the way your home feels. From regular upkeep
+            to deep cleans and move-in/move-out services, we take care of the details
+            so you don't have to.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-btn" href="#contact">Request a Cleaning</a>
+            <a class="secondary-btn" href="#services">View Services</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>Feel completely reset.</h2>
+          <p>Professional cleaning designed around the level of care your home needs.</p>
+          <div class="check">Surfaces cleaned & dusted</div>
+          <div class="check">Floors swept, vacuumed & mopped</div>
+          <div class="check">Kitchen & bathroom cleaning</div>
+          <div class="check">Detail work available</div>
+          <div class="check">Move-in / move-out ready</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Our Services</div>
+          <h2>Cleaning that fits your home.</h2>
+          <p>Choose the service that matches what your space needs right now.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">✦</div>
+            <h3>Standard Clean</h3>
+            <p>Perfect for regular upkeep and keeping your home feeling fresh.</p>
+            <ul>
+              <li>Wipe down all surfaces</li>
+              <li>Dusting</li>
+              <li>Sweeping & vacuuming</li>
+              <li>Mopping</li>
+              <li>Living areas & bedrooms</li>
+              <li>Kitchen & bathroom</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">✧</div>
+            <h3>Deep Clean</h3>
+            <p>A more thorough reset for seasonal upkeep, special occasions, or when your home needs extra attention.</p>
+            <ul>
+              <li>Everything in a standard clean</li>
+              <li>Baseboards</li>
+              <li>Doors, windows & frames</li>
+              <li>All appliances</li>
+              <li>Extra detail throughout the home</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">⌂</div>
+            <h3>Move-In / Move-Out</h3>
+            <p>Thorough cleaning to leave a space ready for the next chapter.</p>
+            <ul>
+              <li>Kitchen & bathrooms</li>
+              <li>Bedrooms & living areas</li>
+              <li>All surfaces</li>
+              <li>Appliances</li>
+              <li>Dusting & baseboards</li>
+              <li>Cabinets</li>
+              <li>Doors, windows & frames</li>
+              <li>Sweeping, vacuuming & mopping</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="icon">🎨</div>
+            <h3>Interior House Painting</h3>
+            <p>Give your home a fresh look with professional interior painting for rooms, walls, and living spaces.</p>
+            <ul>
+              <li>Interior walls & rooms</li>
+              <li>Ceilings & trim available</li>
+              <li>Color refreshes & repaints</li>
+              <li>Professional prep & cleanup</li>
+              <li>Custom estimates for every job</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container why-grid">
+        <div class="why-box">
+          <div class="eyebrow" style="color:#9fc8d7">Reset & Refresh</div>
+          <h2>Your home should feel like a fresh start.</h2>
+          <p>
+            Whether you need routine maintenance or a complete reset, our goal is
+            simple: leave your home cleaner, fresher, and ready for whatever comes next.
+          </p>
+        </div>
+        <div class="points">
+          <div class="point">
+            <h3>Thorough</h3>
+            <p>We focus on the details that make a clean actually feel clean.</p>
+          </div>
+          <div class="point">
+            <h3>Flexible</h3>
+            <p>Choose a standard, deep, or move-in/move-out service based on your needs.</p>
+          </div>
+          <div class="point">
+            <h3>Fresh Results</h3>
+            <p>Our goal is more than appearance—your home should feel refreshed.</p>
+          </div>
+          <div class="point">
+            <h3>Simple Booking</h3>
+            <p>Tell us what your home needs and we'll help you choose the right service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Ready to reset your home?</h2>
+        <p>
+          Cleaning services are billed at $50 per hour. Painting jobs receive a custom estimate based on the size and scope of the project.
+        </p>
+        <a class="hero-btn" href="tel:+12314634014">Request a Quote</a>
+        <p style="margin-top:18px;margin-bottom:0;font-size:.9rem;">
+          Owner: <strong>Shelby Kinney</strong> &nbsp;•&nbsp;
+          Call/Text: <strong>+1 (231) 463-4014</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">RESET & REFRESH HOME SERVICES</div>
+      <div class="small">© 2026 Reset & Refresh Home Services. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
